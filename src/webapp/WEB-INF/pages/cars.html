@@ -13,9 +13,13 @@
         <img src="/WEB-INF/pages/синий%20трактор2.jpeg" style=»vertical-align:bottom»>
         <h1>List of cars:</h1>
         <div th:each="car : ${cars}" class="card mb-2 mr-2">
-            <div class="card-header" th:text="${car.getModel()}"/>
-            
+            <!div class="card-header" th:text="${car.getModel()}"/>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" th:text="|Color: ${car.getColor()}|"/>
+                <li class="list-group-item" th:text="|Number: ${car.getNumber()}|"/>
+            </ul>
         </div>
+        </table>
     </div>
 </div>
 </body>
