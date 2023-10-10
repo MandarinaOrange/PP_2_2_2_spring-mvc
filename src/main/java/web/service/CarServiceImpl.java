@@ -2,6 +2,7 @@ package web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import web.dao.CarDao;
 import web.model.Car;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class CarServiceImpl implements CarService{
     private static List<Car> cars = new ArrayList<>();
 
     @Autowired
-    private CarService carService;
+    private CarDao carDao;
 
 
     static {
@@ -24,6 +25,6 @@ public class CarServiceImpl implements CarService{
     }
     @Override
     public List<Car> getCars(int number) {
-        return carService.getCars(number);
+        return carDao.getCars(number);
     }
 }

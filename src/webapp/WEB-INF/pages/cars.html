@@ -6,10 +6,17 @@
     <title></title>
 </head>
 <body>
-<div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+
+
+<div class="container">
+    <div class="row align-items-center">
+        <img src="/WEB-INF/pages/синий%20трактор2.jpeg" style=»vertical-align:bottom»>
+        <h1>List of cars:</h1>
+        <div th:each="car : ${cars}" class="card mb-2 mr-2">
+            <div class="card-header" th:text="${car.getModel()}"/>
+            
+        </div>
+    </div>
 </div>
 </body>
 </html>
